@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name = 'auto_html'
-  gem.version = '3.0.0'
+  gem.version = '3.0.1'
 
   gem.summary = "Transform URLs to appropriate markup"
   gem.description = "Automatically transforms URLs into rich content in your HTML document"
