@@ -1,29 +1,19 @@
-# frozen_string_literal: true
-
 Gem::Specification.new do |gem|
   gem.name = 'auto_html'
-  gem.version = '2.0.0'
+  gem.version = '1.6.4'
 
-  gem.summary = 'Plain text to HTML conversion'
-  gem.description = 'Collection of filters for transforming text into HTML code'
+  gem.summary = "Transform URIs to appropriate markup"
+  gem.description = "Automatically transforms URIs (via domain) and includes the destination resource (Vimeo, YouTube movie, image, ...) in your document"
 
-  gem.author   = 'Dejan Simic'
+  gem.authors  = ['Dejan Simic']
   gem.email    = 'desimic@gmail.com'
-  gem.homepage = 'https://github.com/dejan/auto_html'
-  gem.license  = 'MIT'
+  gem.homepage = 'http://github.com/dejan/auto_html'
 
-  gem.add_dependency 'gemoji', '~> 2.1'
-  gem.add_dependency 'redcarpet', '~> 3.5'
-  gem.add_dependency 'rinku', '~> 2.0'
-  gem.add_dependency 'tag_helper', '~> 0.5'
+  gem.add_dependency('rinku', '~> 1.5.0')
+  gem.add_dependency('redcarpet', '~> 3.1')
 
-  gem.required_ruby_version = '>= 2.0.0'
-
-  gem.add_development_dependency 'rake', '>= 12.3.3'
-  gem.add_development_dependency 'rspec', '~> 3.3'
-  gem.add_development_dependency 'rspec_junit_formatter', '~> 0.2'
-  gem.add_development_dependency 'rubocop', '~> 0.89.1'
-
+  # ensure the gem is built out of versioned files
   gem.files = Dir['Rakefile', '{bin,lib,man,test,spec}/**/*',
                   'README*', 'LICENSE'] & `git ls-files -z`.split("\0")
 end
+

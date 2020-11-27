@@ -1,10 +1,9 @@
-# frozen_string_literal: true
+require 'rake/testtask'
 
-require 'bundler/gem_tasks'
-require 'rspec/core/rake_task'
-require 'rubocop/rake_task'
+desc 'Default: run tests'
+task :default => :test
 
-RSpec::Core::RakeTask.new(:spec)
-RuboCop::RakeTask.new
-
-task default: %i[rubocop spec]
+desc 'Test AutoHtml'
+Rake::TestTask.new(:test) do |t|
+  t.pattern = 'test/**/*_test.rb'
+end

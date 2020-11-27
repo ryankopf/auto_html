@@ -1,13 +1,17 @@
-# frozen_string_literal: true
+%w(base filter builder auto_html_for).each do |f|
+  require File.expand_path("../auto_html/#{f}", __FILE__)
+end
 
-# AutoHtml is a collection of filters that transform plain text into HTML code.
-module AutoHtml
-  autoload :Pipeline,     'auto_html/pipeline'
+Dir["#{File.dirname(__FILE__) + '/auto_html/filters'}/**/*"].each do |filter|
+  require "#{filter}"
+end
 
-  autoload :Emoji,        'auto_html/emoji'
-  autoload :HtmlEscape,   'auto_html/html_escape'
-  autoload :Image,        'auto_html/image'
-  autoload :Link,         'auto_html/link'
-  autoload :Markdown,     'auto_html/markdown'
-  autoload :SimpleFormat, 'auto_html/simple_format'
+# if rails
+require 'auto_html/railtie' if defined?(Rails::Railtie)
+if defined?(ActiveRecord::Base)
+  ActiveRecord::Base.send :include, AutoHtmlFor
+
+  module ActionView::Helpers::TextHelper
+    include AutoHtml
+  end
 end
