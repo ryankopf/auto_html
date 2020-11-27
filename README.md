@@ -2,14 +2,14 @@ auto_html [![Build Status](https://secure.travis-ci.org/dejan/auto_html.png?bran
 =========
 
 
-auto_html is a Rails extension for transforming URLs to appropriate resource (image, link, YouTube, Vimeo video,...). It's the perfect choice if you don't want to bother visitors with rich HTML editor or markup code, but you still want to allow them to embed video, images, links and more on your site, purely by pasting URL. Check out the [live demo](http://rors.org/demos/auto_html).
+auto_html is a Rails extension for transforming URLs to appropriate resource (images, links, YouTube, Vimeo videos, et cetera). It's great if you don't want your visitors messing with rich HTML directly, but you still want to present them with rich content.
 
 
 ## Install
 
 Specify the gem in Gemfile of the project
 
-    gem "auto_html"
+    gem "ryankopf-auto_html"
 
 
 ## Example usage
@@ -101,7 +101,7 @@ Now you can run `cap auto_html:rebuild CLASS=[your_model]`.
 
 ## Licence
 
-Copyright (c) 2009 Dejan Simic
+Copyright (c) 2009 Dejan Simic, Ryan Kopf
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
